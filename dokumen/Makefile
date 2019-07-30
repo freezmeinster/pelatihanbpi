@@ -15,3 +15,5 @@ clean: $(MYDIR)/*.pdf
 		rm $${fl} ;\
 		echo "Deleting => " $${fl} ;\
 	done
+latex:
+	@pdflatex dokumen.tex

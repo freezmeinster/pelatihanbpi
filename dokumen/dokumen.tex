@@ -1,0 +1,108 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage{mathpazo}
+\usepackage{graphicx}
+\usepackage{geometry} % Necessary package for defining margins
+
+\geometry{
+	top=1cm, % Defines top margin
+	bottom=2cm, % Defines bottom margin
+	left=2.2cm, % Defines left margin
+	right=2.2cm, % Defines right margin
+	includehead, % Includes space for a header
+	%includefoot, % Includes space for a footer
+	%showframe, % Uncomment if you want to show how it looks on the page 
+}
+
+\setlength{\parindent}{15pt}
+
+%---------------------------------------------------------------------------------
+% Define your spacing
+\usepackage{setspace} % Required for spacing
+% Two options:
+\linespread{1}
+%\onehalfspacing % one-half-spacing linespread
+%----------------------------------------------------------------------------------------
+% Define your fonts
+\usepackage[T1]{fontenc} % Output font encoding for international characters
+\usepackage[utf8]{inputenc} % Required for inputting international characters
+
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks   = true, %Colours links instead of ugly boxes
+  urlcolor     = blue, %Colour for external hyperlinks
+  linkcolor    = blue, %Colour of internal links
+  citecolor   = red %Colour of citations
+}
+
+\usepackage{parskip}
+\usepackage{listings}
+\usepackage{color}
+\definecolor{lightgray}{gray}{0.9}
+
+\lstset{
+    showstringspaces=false,
+    basicstyle=\ttfamily,
+    keywordstyle=\color{blue},
+    commentstyle=\color[grey]{0.6},
+    stringstyle=\color[RGB]{255,150,75}
+}
+
+\newcommand{\inlinecode}[2]{\colorbox{lightgray}{\lstinline[language=#1]$#2$}}
+
+
+%---------------------------------------------------------------------------------
+% Define your headers and footers
+
+\usepackage{fancyhdr} % Package is needed to define header and footer
+\pagestyle{fancy} % Allows you to customize the headers and footers
+
+%\renewcommand{\sectionmark}[1]{\markboth{#1}{}} % Removes the section number from the header when \leftmark is used
+
+% Headers
+\lhead{} % Define left header
+\chead{\textit{}} % Define center header - e.g. add your paper title
+\rhead{} % Define right header
+
+% Footers
+\lfoot{} % Define left footer
+\cfoot{\footnotesize \thepage} % Define center footer
+\rfoot{ } % Define right footer
+
+%---------------------------------------------------------------------------------
+%	Add information on bibliography
+\usepackage{natbib} % Use natbib for citing
+
+% For citing with natbib, you may want to use this reference sheet: 
+% http://merkel.texture.rocks/Latex/natbib.php
+
+%---------------------------------------------------------------------------------
+% Add field for signature (Reference: https://tex.stackexchange.com/questions/35942/how-to-create-a-signature-date-page)
+\newcommand{\signature}[2][5cm]{%
+  \begin{tabular}{@{}p{#1}@{}}
+    #2 \\[2\normalbaselineskip] \hrule \\[0pt]
+    {\small \textit{Signature}} \\[2\normalbaselineskip] \hrule \\[0pt]
+    {\small \textit{Place, Date}}
+  \end{tabular}
+}
+
+
+\title{Python Mini Tutorial}
+\date{ 9 Juli 2019}
+\author{Mula Cloud Project}
+ 
+\begin{document}
+
+\pagenumbering{gobble}
+\maketitle
+\newpage
+
+\tableofcontents
+\newpage
+\pagenumbering{arabic}
+
+\input{intro}
+\input{instalasi}
+\input{coba}
+\input{instalasi}
+
+\end{document}
